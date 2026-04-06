@@ -149,7 +149,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="container">
 <header>
 <h1>&#x1f980; <span>PM Claw</span> &#8212; Physical AI Intelligence</h1>
-<div class="meta"><span>&#x1f4c5; 2026-04-05</span><span class="badge">Daily Update</span><span class="badge badge-ver">Isaac Sim &#x2265;5.1</span></div>
+<div class="meta"><span>&#x1f4c5; 2026-04-06</span><span class="badge">Daily Update</span><span class="badge badge-ver">Isaac Sim &#x2265;5.1</span></div>
 <div class="stats-bar">
 <div class="stat"><div class="num">35</div><div class="lbl">JSONL Entries</div></div>
 <div class="stat"><div class="num">8</div><div class="lbl">Sources</div></div>
@@ -272,7 +272,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="window-stats">
 <div class="ws-item"><div class="ws-num">0</div><div class="ws-lbl">Issues</div></div>
 </div>
-<div class="digest-summary"><p><strong>0 issues tracked (Apr 04 &#8211; Apr 05, 2026).</strong></p></div>
+<div class="digest-summary"><p><strong>0 issues tracked (Apr 05 &#8211; Apr 06, 2026).</strong></p></div>
 
 
 </div>
@@ -280,9 +280,9 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <!-- 7d -->
 <div id="digest-7d" class="digest-window active">
 <div class="window-stats">
-<div class="ws-item"><div class="ws-num">8</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">1</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">1</div><div class="ws-lbl">Wishlist</div></div>
+<div class="ws-item"><div class="ws-num">5</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">2</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">1</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">2</div><div class="ws-lbl">Friction</div></div>
 </div>
-<div class="digest-summary"><p><strong>8 issues tracked (Mar 29 &#8211; Apr 05, 2026).</strong> Blockers: Multi-GPU distributed training fails with Newton p, RayCasterCamera depth sensor returns all NaN value, [PRE-5.1] Air-gapped deployment fails — omni.flowu.</p></div>
+<div class="digest-summary"><p><strong>5 issues tracked (Mar 30 &#8211; Apr 06, 2026).</strong> Blockers: Multi-GPU distributed training fails with Newton p, RayCasterCamera depth sensor returns all NaN value.</p></div>
 
 <div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5132" target="_blank">Multi-GPU distributed training fails with Newton physics backend</a></div>
@@ -293,11 +293,6 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5131" target="_blank">RayCasterCamera depth sensor returns all NaN values</a></div>
 <div class="issue-desc">RayCasterCamera outputs NaN for all data types. Other RayCaster sensors work. Debug vis shows no rays hitting terrain.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">github</span><span class="issue-date">Mar 31</span><span class="issue-tag">raycaster</span><span class="issue-tag">camera</span><span class="issue-tag">depth</span><span class="issue-tag">nan</span></div>
-</div>
-<div class="issue-item sev-blocker">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/air-gapped-deployment-app-exits-due-to-dependency-solver-failure-omni-flowusd-despite-disabling-registry-sync-in-offline-l20-cluster/365085" target="_blank">[PRE-5.1] Air-gapped deployment fails — omni.flowusd dependency solver crash (4.5.0)</a></div>
-<div class="issue-desc">Isaac Sim 4.5.0 exits on air-gapped L20 cluster due to dependency solver failure for omni.flowusd. Registry sync disabled but app still fails. Blocks enterprise offline deployments.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 30</span><span class="issue-tag">air-gapped</span><span class="issue-tag">enterprise</span><span class="issue-tag">deployment</span><span class="issue-tag">L20</span></div>
 </div>
 <div class="issue-item sev-pain">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/isaac-sim-5-1-gui-crash-access-violation-on-rtx-5070-ti-blackwell-fixed-by-driver-downgrade-to-591-74/365335" target="_blank">Isaac Sim 5.1 GUI crash on RTX 5070 Ti Blackwell — access violation in omni.kit.window.preferences</a></div>
@@ -310,28 +305,18 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 31</span><span class="issue-tag">vscode</span><span class="issue-tag">debugger</span><span class="issue-tag">integration</span></div>
 </div>
 <div class="issue-item sev-friction">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/2026-03-30-0232-warning-omni-graph-core-plugin-could-not-find-node-type-interface-for-omni-graph-nodes-readprimlocaltransform/365051" target="_blank">OmniGraph ReadPrimLocalTransform node type not found</a></div>
-<div class="issue-desc">Warning when adding ReadPrimLocalTransform node in OmniGraph. Node type interface not found.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 30</span><span class="issue-tag">omnigraph</span><span class="issue-tag">node-type</span><span class="issue-tag">missing</span></div>
-</div>
-<div class="issue-item sev-friction">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/viewport-flickering-issue-in-isaac-sim-after-recent-use/365140" target="_blank">[PRE-5.1] Viewport flickering in Isaac Sim 4.5 (Windows)</a></div>
 <div class="issue-desc">Viewport flickering started March 23. Windows, Isaac Sim 4.5.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 31</span><span class="issue-tag">viewport</span><span class="issue-tag">flickering</span><span class="issue-tag">windows</span><span class="issue-tag">pre-5.1</span></div>
-</div>
-<div class="issue-item sev-wishlist">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/is-there-a-built-in-inner-loop-pid-velocity-controller-for-multirotor-quadrotor-in-isaac-lab/365068" target="_blank">Request: built-in PID velocity controller for multirotor in Isaac Lab</a></div>
-<div class="issue-desc">Request for inner-loop PID controller for Crazyflie CF2X quadrotor RL. No equivalent to gym-pybullet-drones DSLPIDControl.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-wishlist">wishlist</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 30</span><span class="issue-tag">multirotor</span><span class="issue-tag">pid</span><span class="issue-tag">controller</span><span class="issue-tag">quadrotor</span></div>
 </div>
 </div>
 
 <!-- 2w -->
 <div id="digest-2w" class="digest-window">
 <div class="window-stats">
-<div class="ws-item"><div class="ws-num">29</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">12</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">6</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">4</div><div class="ws-lbl">Wishlist</div></div>
+<div class="ws-item"><div class="ws-num">28</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">6</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">12</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">6</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">4</div><div class="ws-lbl">Wishlist</div></div>
 </div>
-<div class="digest-summary"><p><strong>29 issues tracked (Mar 22 &#8211; Apr 05, 2026).</strong> Blockers: Physics Explosion with Custom Ackermann AMR on Mov, Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p.</p></div>
+<div class="digest-summary"><p><strong>28 issues tracked (Mar 23 &#8211; Apr 06, 2026).</strong> Blockers: Physics Explosion with Custom Ackermann AMR on Mov, Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p.</p></div>
 
 <div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/sample-ackermann-custom-car-physics-explosion-on-movement/364774" target="_blank">Physics Explosion with Custom Ackermann AMR on Movement</a></div>
@@ -347,11 +332,6 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5132" target="_blank">Multi-GPU distributed training fails with Newton physics backend</a></div>
 <div class="issue-desc">torch.distributed.run with Newton backend fails on multi-GPU due to hardcoded cuda:0 in Warp/PyTorch allocations. 4 root causes: NewtonManager device, ScopedCapture device, missing device in set_joint_position_target, AppLauncher argv cleanup. Also blocks consumer GPUs without P2P.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">github</span><span class="issue-date">Mar 31</span><span class="issue-tag">newton</span><span class="issue-tag">multi-gpu</span><span class="issue-tag">distributed-training</span><span class="issue-tag">warp</span></div>
-</div>
-<div class="issue-item sev-blocker">
-<div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/pull/5088" target="_blank">Newton collision pipeline NaN divergence on mesh terrain (float32 precision)</a></div>
-<div class="issue-desc">MuJoCo Warp float32 causes solver divergence in ~1/4000 envs with elliptic friction cone on mesh terrain. Zero contact margin from USD import causes GJK failure. Buffer overflow silently drops contacts. Multiple workarounds required.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">github</span><span class="issue-date">Mar 23</span><span class="issue-tag">newton</span><span class="issue-tag">mujoco-warp</span><span class="issue-tag">float32</span><span class="issue-tag">mesh-terrain</span></div>
 </div>
 <div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5131" target="_blank">RayCasterCamera depth sensor returns all NaN values</a></div>
@@ -433,7 +413,12 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-desc">Add Nucleus Connection fails when connecting Isaac Sim from a remote machine on the same network, despite Nucleus web UI being accessible at :8080.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 24</span><span class="issue-tag">nucleus</span><span class="issue-tag">networking</span><span class="issue-tag">multi-machine</span></div>
 </div>
-<p style="text-align:center;padding:12px;color:#475569;font-size:.75rem;font-style:italic">+ 9 more issues not shown</p>
+<div class="issue-item sev-friction">
+<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/vscode-link-address-error-and-unable-to-launch-vs-code-error-code-1/365144" target="_blank">VSCode integration broken in Isaac Sim 5.1.0</a></div>
+<div class="issue-desc">Cannot open VSCode through Isaac Sim. VS Code debugger reports link address error.</div>
+<div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 31</span><span class="issue-tag">vscode</span><span class="issue-tag">debugger</span><span class="issue-tag">integration</span></div>
+</div>
+<p style="text-align:center;padding:12px;color:#475569;font-size:.75rem;font-style:italic">+ 8 more issues not shown</p>
 </div>
 
 <!-- 1m -->
@@ -441,7 +426,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="window-stats">
 <div class="ws-item"><div class="ws-num">31</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">12</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">5</div><div class="ws-lbl">Wishlist</div></div>
 </div>
-<div class="digest-summary"><p><strong>31 issues tracked (Mar 06 &#8211; Apr 05, 2026).</strong> Blockers: Physics Explosion with Custom Ackermann AMR on Mov, Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p.</p></div>
+<div class="digest-summary"><p><strong>31 issues tracked (Mar 07 &#8211; Apr 06, 2026).</strong> Blockers: Physics Explosion with Custom Ackermann AMR on Mov, Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p.</p></div>
 
 <div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/sample-ackermann-custom-car-physics-explosion-on-movement/364774" target="_blank">Physics Explosion with Custom Ackermann AMR on Movement</a></div>
@@ -568,7 +553,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="pi"><div class="pt"><strong>Fourier Intelligence</strong></div><div class="pd">GR-2 humanoid for rehab + industrial. GR00T adopter. Medical + industrial dual focus.</div><div class="pm"><span class="sev sev-friction">customer</span><span class="src">China</span></div></div>
 </div></div>
 
-<div class="cs open"><h3 onclick="this.parentElement.classList.toggle('open')">Robot Brains / Foundation Models (10)</h3><div class="cb">
+<div class="cs open"><h3 onclick="this.parentElement.classList.toggle('open')">Robot Brains / Foundation Models (11)</h3><div class="cb">
 <div class="pi"><div class="pt"><strong>Skild AI</strong> <span class="ver">$14B</span></div><div class="pd">"Universal brain" spanning legged/wheeled/humanoid. CMU spinout. NVIDIA invested $1.4B round (Jan 2026). Uses Isaac Lab + Cosmos. Foxconn deal.</div><div class="pm"><span class="sev sev-blocker">deep partner</span><span class="src">growth</span></div></div>
 <div class="pi"><div class="pt"><strong>Physical Intelligence</strong> <span class="ver">$11B</span></div><div class="pd">General-purpose robot policy models. Independent. $600M Series B (Nov 2025). Raising $1B more at $11B valuation. 2 years old.</div><div class="pm"><span class="sev sev-friction">neutral</span><span class="src">growth</span></div></div>
 <div class="pi"><div class="pt"><strong>FieldAI</strong> <span class="ver">$2B</span></div><div class="pd">Risk-aware models for construction/oil&gas. NVIDIA Ventures invested. Uses Isaac Lab + Cosmos. Bezos + Khosla backing.</div><div class="pm"><span class="sev sev-blocker">deep partner</span><span class="src">growth</span></div></div>
@@ -579,6 +564,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="pi"><div class="pt"><strong>Rhoda AI</strong> <span class="ver">$1.7B</span></div><div class="pd">Video-predictive robot intelligence (FutureVision platform). Trains on hundreds of millions of videos. Direct Video Action models. $450M Series A. Khosla + Temasek backed.</div><div class="pm"><span class="sev sev-friction">neutral</span><span class="src">growth</span></div></div>
 <div class="pi"><div class="pt"><strong>Flexion</strong> <span class="ver">$57M</span></div><div class="pd">Ex-NVIDIA researchers building 'brain' for humanoid robots. RL + VLA + transformer whole-body control. DST Global, NVentures backed. Deploying to factories H1 2026.</div><div class="pm"><span class="sev sev-pain">partner</span><span class="src">growth</span></div></div>
 <div class="pi"><div class="pt"><strong>RLWRLD</strong></div><div class="pd">Robotics foundation models for industry. $41M total seed funding. Physical AI specialist.</div><div class="pm"><span class="sev sev-friction">neutral</span><span class="src">growth</span></div></div>
+<div class="pi"><div class="pt"><strong>AMI Labs (Yann LeCun)</strong> <span class="ver">$3.5B</span></div><div class="pd">Post-Meta venture building "world models" &#8212; AI that learns from 3D reality, not language. $1.03B seed (largest European ever). NVIDIA investor alongside Bezos, Samsung, Toyota Ventures, Temasek. Paris HQ.</div><div class="pm"><span class="sev sev-pain">partner</span><span class="src">growth</span></div></div>
 </div></div>
 
 <div class="cs open"><h3 onclick="this.parentElement.classList.toggle('open')">Industrial Giants (GTC 2026)</h3><div class="cb">
@@ -634,7 +620,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="hm"><table>
 <tr><th>Tier</th><th>Companies</th><th>Relationship</th></tr>
 <tr><td class="c" style="background:#22c55e22;color:#22c55e;font-weight:700">Tier 1: Deep</td><td>Skild AI, FieldAI, Figure, Agility, Amazon, FANUC, ABB, YASKAWA, KUKA, Foxconn, Lightwheel AI, Flexion</td><td>NVIDIA invested or co-building</td></tr>
-<tr><td class="c" style="background:#3b82f622;color:#3b82f6;font-weight:700">Tier 2: Active</td><td>Apptronik, Boston Dynamics, UR, Toyota, TSMC, KION, Siemens, PTC, World Labs, Rendered.ai, Serve Robotics</td><td>Using stack in production</td></tr>
+<tr><td class="c" style="background:#3b82f622;color:#3b82f6;font-weight:700">Tier 2: Active</td><td>Apptronik, Boston Dynamics, UR, Toyota, TSMC, KION, Siemens, PTC, World Labs, Rendered.ai, Serve Robotics, AMI Labs</td><td>Using stack in production</td></tr>
 <tr><td class="c" style="background:#eab30822;color:#eab308;font-weight:700">Tier 3: Users</td><td>Unitree, Fourier, Palatial, Bifrost, SKY ENGINE AI, Applied Intuition, Datagen, Mind Robotics, Sunday, RoboForce, Anvil Robotics, Robosynx, hundreds of startups</td><td>Isaac Sim/Lab for training</td></tr>
 <tr><td class="c" style="background:#ef444422;color:#ef4444;font-weight:700">Competitors</td><td>Google DeepMind, Genesis AI, Physical Intelligence, Tesla, MuJoCo Playground</td><td>Alternative stacks</td></tr>
 </table></div>
@@ -655,7 +641,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Weekly Stats Bar -->
 <section>
-<h2>&#x1f52c; Tech Radar &#8212; Week of Mar 29 &#8211; Apr 5, 2026</h2>
+<h2>&#x1f52c; Tech Radar &#8212; Week of Mar 30 &#8211; Apr 6, 2026</h2>
 <div class="radar-stats">
 <div class="radar-stat"><div class="rs-num">~250+</div><div class="rs-lbl">ArXiv cs.RO Papers</div></div>
 <div class="radar-stat"><div class="rs-num">4</div><div class="rs-lbl">Major Partnerships</div></div>
@@ -666,7 +652,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Key ArXiv Papers -->
 <section>
-<h2>&#x1f4c4; Key ArXiv Papers &#8212; Week of Mar 29 &#8211; Apr 5, 2026</h2>
+<h2>&#x1f4c4; Key ArXiv Papers &#8212; Week of Mar 30 &#8211; Apr 6, 2026</h2>
 <div class="paper-card">
 <h4><a href="https://arxiv.org/abs/2601.09605" target="_blank">MANGO: Sim2Real Image Translation</a></h4>
 <div class="paper-summary">Image translation for viewpoint-robust sim2real transfer. Policies trained with one camera angle work with different real-world placement.</div>
@@ -777,8 +763,28 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Industry Moves -->
 <section>
-<h2>&#x1f3ed; Industry Moves &#8212; Mar 29 &#8211; Apr 5, 2026</h2>
+<h2>&#x1f3ed; Industry Moves &#8212; Mar 29 &#8211; Apr 6, 2026</h2>
 <div class="timeline">
+<div class="tl-item">
+<div class="tl-date">Apr 6</div>
+<div class="tl-title">MassRobotics Physical AI Fellowship Begins</div>
+<div class="tl-desc">Second cohort of AWS + NVIDIA Inception Physical AI Fellowship kicks off. 8-week virtual program. Pipeline for startups entering the NVIDIA ecosystem.</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">Apr 4</div>
+<div class="tl-title">National Robotics Week &#8212; NVIDIA Coverage Hub</div>
+<div class="tl-desc">NVIDIA launches rolling blog coverage of physical AI breakthroughs. Watch for new tool/framework announcements throughout the week.</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">Apr 3</div>
+<div class="tl-title">Baidu Apollo Go: 100+ Robotaxis Stall in Wuhan</div>
+<div class="tl-desc">Mass system malfunction strands passengers for up to 2 hours. First fleet-wide robotaxi shutdown in China. Edge case simulation at scale remains unsolved.</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">Apr 3</div>
+<div class="tl-title">UBTech Offers $18M for AI Scientist</div>
+<div class="tl-desc">Chinese humanoid maker&#8217;s chief scientist offer signals physical AI talent war reaching new highs. <a href="https://www.bloomberg.com" target="_blank">Bloomberg</a></div>
+</div>
 <div class="tl-item">
 <div class="tl-date">Apr 4</div>
 <div class="tl-title">Robosynx Launches</div>
@@ -909,7 +915,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 </div>
 
-<footer><p>Ziggy - PM Claw - Updated 2026-04-05 - Isaac Sim 5.1+ priority - Daily pull 7 AM PT</p></footer>
+<footer><p>Ziggy - PM Claw - Updated 2026-04-06 - Isaac Sim 5.1+ priority - Daily pull 7 AM PT</p></footer>
 </div>
 <script>
 function switchTab(name){
