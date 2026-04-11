@@ -149,9 +149,9 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="container">
 <header>
 <h1>&#x1f980; <span>PM Claw</span> &#8212; Physical AI Intelligence</h1>
-<div class="meta"><span>&#x1f4c5; 2026-04-09</span><span class="badge">Daily Update</span><span class="badge badge-ver">Isaac Sim &#x2265;5.1</span></div>
+<div class="meta"><span>&#x1f4c5; 2026-04-10</span><span class="badge">Daily Update</span><span class="badge badge-ver">Isaac Sim &#x2265;5.1</span></div>
 <div class="stats-bar">
-<div class="stat"><div class="num">36</div><div class="lbl">JSONL Entries</div></div>
+<div class="stat"><div class="num">37</div><div class="lbl">JSONL Entries</div></div>
 <div class="stat"><div class="num">8</div><div class="lbl">Sources</div></div>
 <div class="stat"><div class="num">6mo</div><div class="lbl">Window</div></div>
 </div>
@@ -272,7 +272,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="window-stats">
 <div class="ws-item"><div class="ws-num">0</div><div class="ws-lbl">Issues</div></div>
 </div>
-<div class="digest-summary"><p><strong>0 issues tracked (Apr 08 &#8211; Apr 09, 2026).</strong></p></div>
+<div class="digest-summary"><p><strong>0 issues tracked (Apr 09 &#8211; Apr 10, 2026).</strong></p></div>
 
 
 </div>
@@ -282,7 +282,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="window-stats">
 <div class="ws-item"><div class="ws-num">0</div><div class="ws-lbl">Issues</div></div>
 </div>
-<div class="digest-summary"><p><strong>0 issues tracked (Apr 02 &#8211; Apr 09, 2026).</strong></p></div>
+<div class="digest-summary"><p><strong>0 issues tracked (Apr 03 &#8211; Apr 10, 2026).</strong></p></div>
 
 
 </div>
@@ -290,15 +290,10 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <!-- 2w -->
 <div id="digest-2w" class="digest-window">
 <div class="window-stats">
-<div class="ws-item"><div class="ws-num">14</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">5</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">5</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">1</div><div class="ws-lbl">Wishlist</div></div>
+<div class="ws-item"><div class="ws-num">10</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">1</div><div class="ws-lbl">Wishlist</div></div>
 </div>
-<div class="digest-summary"><p><strong>14 issues tracked (Mar 26 &#8211; Apr 09, 2026).</strong> Blockers: Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p, RayCasterCamera depth sensor returns all NaN value.</p></div>
+<div class="digest-summary"><p><strong>10 issues tracked (Mar 27 &#8211; Apr 10, 2026).</strong> Blockers: Multi-GPU distributed training fails with Newton p, RayCasterCamera depth sensor returns all NaN value, [PRE-5.1] Air-gapped deployment fails — omni.flowu.</p></div>
 
-<div class="issue-item sev-blocker">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/jetson-agx-thor-does-not-support-webrtc-livestreaming-in-isaac-sim-5-1-0/364962" target="_blank">Jetson AGX Thor WebRTC Livestream Not Working</a></div>
-<div class="issue-desc">Headless Isaac Sim 5.1.0 on Jetson AGX Thor cannot serve WebRTC livestream to remote browser. Core workflow for headless-on-edge use cases.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 27</span><span class="issue-tag">jetson-thor</span><span class="issue-tag">webrtc</span><span class="issue-tag">headless</span><span class="issue-tag">edge</span></div>
-</div>
 <div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5132" target="_blank">Multi-GPU distributed training fails with Newton physics backend</a></div>
 <div class="issue-desc">torch.distributed.run with Newton backend fails on multi-GPU due to hardcoded cuda:0 in Warp/PyTorch allocations. 4 root causes: NewtonManager device, ScopedCapture device, missing device in set_joint_position_target, AppLauncher argv cleanup. Also blocks consumer GPUs without P2P.</div>
@@ -310,29 +305,9 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">github</span><span class="issue-date">Mar 31</span><span class="issue-tag">raycaster</span><span class="issue-tag">camera</span><span class="issue-tag">depth</span><span class="issue-tag">nan</span></div>
 </div>
 <div class="issue-item sev-blocker">
-<div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5115" target="_blank">Sim2Sim transfer inconsistency with armature parameter</a></div>
-<div class="issue-desc">Non-zero armature values cause severe discrepancy between Isaac Lab play mode and Isaac Sim deployment. Agent stable in training but oscillates in deployment. Setting armature=0 eliminates gap.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">github</span><span class="issue-date">Mar 27</span><span class="issue-tag">sim2sim</span><span class="issue-tag">armature</span><span class="issue-tag">transfer</span><span class="issue-tag">fidelity</span></div>
-</div>
-<div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/air-gapped-deployment-app-exits-due-to-dependency-solver-failure-omni-flowusd-despite-disabling-registry-sync-in-offline-l20-cluster/365085" target="_blank">[PRE-5.1] Air-gapped deployment fails — omni.flowusd dependency solver crash (4.5.0)</a></div>
 <div class="issue-desc">Isaac Sim 4.5.0 exits on air-gapped L20 cluster due to dependency solver failure for omni.flowusd. Registry sync disabled but app still fails. Blocks enterprise offline deployments.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 30</span><span class="issue-tag">air-gapped</span><span class="issue-tag">enterprise</span><span class="issue-tag">deployment</span><span class="issue-tag">L20</span></div>
-</div>
-<div class="issue-item sev-pain">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/stableidmap-for-lidarrtx-has-missing-object-ids/364919" target="_blank">LidarRTX StableIDMap Missing Object IDs</a></div>
-<div class="issue-desc">When recording scenes with LidarRTX, some assets return object IDs not in the StableIDMap. Breaks perception pipelines relying on consistent ID mapping.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 27</span><span class="issue-tag">lidar</span><span class="issue-tag">sensor</span><span class="issue-tag">synth-data</span><span class="issue-tag">segmentation</span></div>
-</div>
-<div class="issue-item sev-pain">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/stableidmap-for-lidarrtx-has-missing-object-ids/364919" target="_blank">LidarRTX StableIDMap missing object_ids</a></div>
-<div class="issue-desc">Recording scenes with LidarRTX produces object IDs not in StableIDMap for some assets.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 27</span><span class="issue-tag">lidar</span><span class="issue-tag">stableidmap</span><span class="issue-tag">recording</span><span class="issue-tag">object-id</span></div>
-</div>
-<div class="issue-item sev-pain">
-<div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5116" target="_blank">URDF-to-USD converter produces non-instanceable primitives (VRAM explosion)</a></div>
-<div class="issue-desc">URDF with simple collision primitives converts to USD using more VRAM than mesh collisions. Instancing not applied.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">github</span><span class="issue-date">Mar 27</span><span class="issue-tag">urdf</span><span class="issue-tag">usd</span><span class="issue-tag">vram</span><span class="issue-tag">instancing</span></div>
 </div>
 <div class="issue-item sev-pain">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/jetson-agx-thor-does-not-support-webrtc-livestreaming-in-isaac-sim-5-1-0/364962" target="_blank">Jetson AGX Thor WebRTC livestreaming broken in Isaac Sim 5.1.0</a></div>
@@ -343,6 +318,11 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/isaac-sim-5-1-gui-crash-access-violation-on-rtx-5070-ti-blackwell-fixed-by-driver-downgrade-to-591-74/365335" target="_blank">Isaac Sim 5.1 GUI crash on RTX 5070 Ti Blackwell — access violation in omni.kit.window.preferences</a></div>
 <div class="issue-desc">Isaac Sim 5.1.0 crashes ~20s after GUI startup with access violation on RTX 5070 Ti Laptop (12GB) with driver 595.79 on Windows 11. Headless works. Downgrading to 591.74 resolves. NVIDIA confirmed validated driver is 580.88; Vulkan rendering path flagged as known Blackwell issue.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Apr 01</span><span class="issue-tag">blackwell</span><span class="issue-tag">rtx-5070-ti</span><span class="issue-tag">driver</span><span class="issue-tag">vulkan</span></div>
+</div>
+<div class="issue-item sev-pain">
+<div class="issue-title"><a href="https://github.com/isaac-sim/IsaacSim/issues/556" target="_blank">move_prim/MovePrims segfault on extension startup — USD stage not initialized</a></div>
+<div class="issue-desc">Calling move_prim() or MovePrims during extension startup causes segfault. MovePrimCommand re-fetches USD stage without null-checking. If stage isn&#x27;t ready, C++ bindings crash instead of raising Python exception. Fix: defer to StageEventType.ASSETS_LOADED. 3 comments, still OPEN.</div>
+<div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">github</span><span class="issue-date">Mar 30</span><span class="issue-tag">extension</span><span class="issue-tag">move-prim</span><span class="issue-tag">segfault</span><span class="issue-tag">usd-stage</span></div>
 </div>
 <div class="issue-item sev-friction">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/vscode-link-address-error-and-unable-to-launch-vs-code-error-code-1/365144" target="_blank">VSCode integration broken in Isaac Sim 5.1.0</a></div>
@@ -369,9 +349,9 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <!-- 1m -->
 <div id="digest-1m" class="digest-window">
 <div class="window-stats">
-<div class="ws-item"><div class="ws-num">31</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">12</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">5</div><div class="ws-lbl">Wishlist</div></div>
+<div class="ws-item"><div class="ws-num">32</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">13</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">5</div><div class="ws-lbl">Wishlist</div></div>
 </div>
-<div class="digest-summary"><p><strong>31 issues tracked (Mar 10 &#8211; Apr 09, 2026).</strong> Blockers: Physics Explosion with Custom Ackermann AMR on Mov, Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p.</p></div>
+<div class="digest-summary"><p><strong>32 issues tracked (Mar 11 &#8211; Apr 10, 2026).</strong> Blockers: Physics Explosion with Custom Ackermann AMR on Mov, Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p.</p></div>
 
 <div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/sample-ackermann-custom-car-physics-explosion-on-movement/364774" target="_blank">Physics Explosion with Custom Ackermann AMR on Movement</a></div>
@@ -468,12 +448,12 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-desc">Isaac Sim 5.1.0 crashes ~20s after GUI startup with access violation on RTX 5070 Ti Laptop (12GB) with driver 595.79 on Windows 11. Headless works. Downgrading to 591.74 resolves. NVIDIA confirmed validated driver is 580.88; Vulkan rendering path flagged as known Blackwell issue.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Apr 01</span><span class="issue-tag">blackwell</span><span class="issue-tag">rtx-5070-ti</span><span class="issue-tag">driver</span><span class="issue-tag">vulkan</span></div>
 </div>
-<div class="issue-item sev-friction">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/isaac-sim-add-nucleus-connection-failed/364507" target="_blank">Nucleus Connection Fails Cross-Machine</a></div>
-<div class="issue-desc">Add Nucleus Connection fails when connecting Isaac Sim from a remote machine on the same network, despite Nucleus web UI being accessible at :8080.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 24</span><span class="issue-tag">nucleus</span><span class="issue-tag">networking</span><span class="issue-tag">multi-machine</span></div>
+<div class="issue-item sev-pain">
+<div class="issue-title"><a href="https://github.com/isaac-sim/IsaacSim/issues/556" target="_blank">move_prim/MovePrims segfault on extension startup — USD stage not initialized</a></div>
+<div class="issue-desc">Calling move_prim() or MovePrims during extension startup causes segfault. MovePrimCommand re-fetches USD stage without null-checking. If stage isn&#x27;t ready, C++ bindings crash instead of raising Python exception. Fix: defer to StageEventType.ASSETS_LOADED. 3 comments, still OPEN.</div>
+<div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">github</span><span class="issue-date">Mar 30</span><span class="issue-tag">extension</span><span class="issue-tag">move-prim</span><span class="issue-tag">segfault</span><span class="issue-tag">usd-stage</span></div>
 </div>
-<p style="text-align:center;padding:12px;color:#475569;font-size:.75rem;font-style:italic">+ 11 more issues not shown</p>
+<p style="text-align:center;padding:12px;color:#475569;font-size:.75rem;font-style:italic">+ 12 more issues not shown</p>
 </div>
 
 </section>
@@ -588,7 +568,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Weekly Stats Bar -->
 <section>
-<h2>&#x1f52c; Tech Radar &#8212; Week of Apr 2 &#8211; Apr 9, 2026</h2>
+<h2>&#x1f52c; Tech Radar &#8212; Week of Apr 3 &#8211; Apr 10, 2026</h2>
 <div class="radar-stats">
 <div class="radar-stat"><div class="rs-num">~250+</div><div class="rs-lbl">ArXiv cs.RO Papers</div></div>
 <div class="radar-stat"><div class="rs-num">4</div><div class="rs-lbl">Major Partnerships</div></div>
@@ -599,7 +579,17 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Key ArXiv Papers -->
 <section>
-<h2>&#x1f4c4; Key ArXiv Papers &#8212; Week of Apr 2 &#8211; Apr 9, 2026</h2>
+<h2>&#x1f4c4; Key ArXiv Papers &#8212; Week of Apr 3 &#8211; Apr 10, 2026</h2>
+<div class="paper-card">
+<h4><a href="https://arxiv.org/abs/2602.19359" target="_blank">Vid2Sid: VLM-in-the-Loop Sim2Real Parameter Optimization</a></h4>
+<div class="paper-summary">Foundation model perception + VLM optimizer analyzes paired sim-real videos, diagnoses mismatches, and proposes physics parameter updates with natural language rationales. Automates manual sim-to-real tuning.</div>
+<div class="paper-meta">
+<span class="paper-date">Feb 2026</span>
+<span class="tag tag-fm">foundation model</span>
+<span class="tag tag-manip">sim2real</span>
+<span class="tag tag-llm">VLM</span>
+</div>
+</div>
 <div class="paper-card">
 <h4><a href="https://arxiv.org/html/2603.04356v1" target="_blank">RoboCasa365: Large-Scale Sim Framework for Generalist Robots</a></h4>
 <div class="paper-summary">365 everyday tasks across 2,500 kitchen environments. 600+ hours human demos + 1,600+ hours synthetic data. Supports multi-task learning, foundation model training, and lifelong learning evaluation.</div>
@@ -720,8 +710,18 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Industry Moves -->
 <section>
-<h2>&#x1f3ed; Industry Moves &#8212; Apr 2 &#8211; Apr 9, 2026</h2>
+<h2>&#x1f3ed; Industry Moves &#8212; Apr 3 &#8211; Apr 10, 2026</h2>
 <div class="timeline">
+<div class="tl-item">
+<div class="tl-date">Apr 10</div>
+<div class="tl-title">Mimic Robotics: 10x Sample Efficiency via Video-Action Models</div>
+<div class="tl-desc">Pretrained internet-scale video model + flow-matching action decoder achieves 10x better sample efficiency, 2x faster convergence on real-world manipulation. National Robotics Week showcase.</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">Apr 10</div>
+<div class="tl-title">NVIDIA US Reindustrialization Push with Physical AI</div>
+<div class="tl-desc">NVIDIA positioning physical AI stack as key to US manufacturing reshoring. ABB, FANUC, Figure, Agility and others building on NVIDIA technology at scale.</div>
+</div>
 <div class="tl-item">
 <div class="tl-date">Apr 8</div>
 <div class="tl-title">Samsara: Physical AI Orchestration Layer at HumanX</div>
@@ -917,7 +917,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 </div>
 
-<footer><p>Ziggy - PM Claw - Updated 2026-04-09 - Isaac Sim 5.1+ priority - Daily pull 7 AM PT</p></footer>
+<footer><p>Ziggy - PM Claw - Updated 2026-04-10 - Isaac Sim 5.1+ priority - Daily pull 7 AM PT</p></footer>
 </div>
 <script>
 function switchTab(name){
