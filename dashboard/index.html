@@ -149,9 +149,9 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="container">
 <header>
 <h1>&#x1f980; <span>PM Claw</span> &#8212; Physical AI Intelligence</h1>
-<div class="meta"><span>&#x1f4c5; 2026-04-12</span><span class="badge">Daily Update</span><span class="badge badge-ver">Isaac Sim &#x2265;5.1</span></div>
+<div class="meta"><span>&#x1f4c5; 2026-04-13</span><span class="badge">Daily Update</span><span class="badge badge-ver">Isaac Sim &#x2265;5.1</span></div>
 <div class="stats-bar">
-<div class="stat"><div class="num">37</div><div class="lbl">JSONL Entries</div></div>
+<div class="stat"><div class="num">39</div><div class="lbl">JSONL Entries</div></div>
 <div class="stat"><div class="num">8</div><div class="lbl">Sources</div></div>
 <div class="stat"><div class="num">6mo</div><div class="lbl">Window</div></div>
 </div>
@@ -272,7 +272,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="window-stats">
 <div class="ws-item"><div class="ws-num">0</div><div class="ws-lbl">Issues</div></div>
 </div>
-<div class="digest-summary"><p><strong>0 issues tracked (Apr 11 &#8211; Apr 12, 2026).</strong></p></div>
+<div class="digest-summary"><p><strong>0 issues tracked (Apr 12 &#8211; Apr 13, 2026).</strong></p></div>
 
 
 </div>
@@ -282,7 +282,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="window-stats">
 <div class="ws-item"><div class="ws-num">0</div><div class="ws-lbl">Issues</div></div>
 </div>
-<div class="digest-summary"><p><strong>0 issues tracked (Apr 05 &#8211; Apr 12, 2026).</strong></p></div>
+<div class="digest-summary"><p><strong>0 issues tracked (Apr 06 &#8211; Apr 13, 2026).</strong></p></div>
 
 
 </div>
@@ -290,9 +290,9 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <!-- 2w -->
 <div id="digest-2w" class="digest-window">
 <div class="window-stats">
-<div class="ws-item"><div class="ws-num">9</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">2</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">1</div><div class="ws-lbl">Wishlist</div></div>
+<div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">2</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">3</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">2</div><div class="ws-lbl">Friction</div></div>
 </div>
-<div class="digest-summary"><p><strong>9 issues tracked (Mar 29 &#8211; Apr 12, 2026).</strong> Blockers: Multi-GPU distributed training fails with Newton p, RayCasterCamera depth sensor returns all NaN value, [PRE-5.1] Air-gapped deployment fails — omni.flowu.</p></div>
+<div class="digest-summary"><p><strong>7 issues tracked (Mar 30 &#8211; Apr 13, 2026).</strong> Blockers: Multi-GPU distributed training fails with Newton p, RayCasterCamera depth sensor returns all NaN value.</p></div>
 
 <div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5132" target="_blank">Multi-GPU distributed training fails with Newton physics backend</a></div>
@@ -304,20 +304,20 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-desc">RayCasterCamera outputs NaN for all data types. Other RayCaster sensors work. Debug vis shows no rays hitting terrain.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">github</span><span class="issue-date">Mar 31</span><span class="issue-tag">raycaster</span><span class="issue-tag">camera</span><span class="issue-tag">depth</span><span class="issue-tag">nan</span></div>
 </div>
-<div class="issue-item sev-blocker">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/air-gapped-deployment-app-exits-due-to-dependency-solver-failure-omni-flowusd-despite-disabling-registry-sync-in-offline-l20-cluster/365085" target="_blank">[PRE-5.1] Air-gapped deployment fails — omni.flowusd dependency solver crash (4.5.0)</a></div>
-<div class="issue-desc">Isaac Sim 4.5.0 exits on air-gapped L20 cluster due to dependency solver failure for omni.flowusd. Registry sync disabled but app still fails. Blocks enterprise offline deployments.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-blocker">blocker</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 30</span><span class="issue-tag">air-gapped</span><span class="issue-tag">enterprise</span><span class="issue-tag">deployment</span><span class="issue-tag">L20</span></div>
-</div>
 <div class="issue-item sev-pain">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/isaac-sim-5-1-gui-crash-access-violation-on-rtx-5070-ti-blackwell-fixed-by-driver-downgrade-to-591-74/365335" target="_blank">Isaac Sim 5.1 GUI crash on RTX 5070 Ti Blackwell — access violation in omni.kit.window.preferences</a></div>
 <div class="issue-desc">Isaac Sim 5.1.0 crashes ~20s after GUI startup with access violation on RTX 5070 Ti Laptop (12GB) with driver 595.79 on Windows 11. Headless works. Downgrading to 591.74 resolves. NVIDIA confirmed validated driver is 580.88; Vulkan rendering path flagged as known Blackwell issue.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Apr 01</span><span class="issue-tag">blackwell</span><span class="issue-tag">rtx-5070-ti</span><span class="issue-tag">driver</span><span class="issue-tag">vulkan</span></div>
 </div>
 <div class="issue-item sev-pain">
-<div class="issue-title"><a href="https://github.com/isaac-sim/IsaacSim/issues/556" target="_blank">move_prim/MovePrims segfault on extension startup — USD stage not initialized</a></div>
-<div class="issue-desc">Calling move_prim() or MovePrims during extension startup causes segfault. MovePrimCommand re-fetches USD stage without null-checking. If stage isn&#x27;t ready, C++ bindings crash instead of raising Python exception. Fix: defer to StageEventType.ASSETS_LOADED. 3 comments, still OPEN.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">github</span><span class="issue-date">Mar 30</span><span class="issue-tag">extension</span><span class="issue-tag">move-prim</span><span class="issue-tag">segfault</span><span class="issue-tag">usd-stage</span></div>
+<div class="issue-title"><a href="https://github.com/isaac-sim/IsaacSim/issues/560" target="_blank">Isaac Sim standalone installer missing USD C++ development headers (pxr/)</a></div>
+<div class="issue-desc">Standalone installer lacks USD C++ development headers (pxr/) and pxrConfig.cmake. Impossible to compile custom USD plugins (ArResolver, custom schemas). Users must build from source or manually patch headers for ABI namespace. Blocks enterprise asset pipelines. 2 comments, still OPEN.</div>
+<div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">github</span><span class="issue-date">Apr 01</span><span class="issue-tag">usd</span><span class="issue-tag">headers</span><span class="issue-tag">sdk</span><span class="issue-tag">plugin</span></div>
+</div>
+<div class="issue-item sev-pain">
+<div class="issue-title"><a href="https://github.com/isaac-sim/IsaacLab/issues/5158" target="_blank">IsaacSim/IsaacLab multi-user permissions broken on shared workstations</a></div>
+<div class="issue-desc">Five permission problems when multiple users share one PC: extension cache symlinks, log write restrictions, datastore locking, /tmp ownership, Python install access denied. Affects 5.1 + 6.0. Group permissions workaround incomplete. Blocks academic labs and shared enterprise workstations.</div>
+<div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">github</span><span class="issue-date">Apr 02</span><span class="issue-tag">multi-user</span><span class="issue-tag">permissions</span><span class="issue-tag">shared-workstation</span><span class="issue-tag">academic</span></div>
 </div>
 <div class="issue-item sev-friction">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/vscode-link-address-error-and-unable-to-launch-vs-code-error-code-1/365144" target="_blank">VSCode integration broken in Isaac Sim 5.1.0</a></div>
@@ -325,28 +325,18 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 31</span><span class="issue-tag">vscode</span><span class="issue-tag">debugger</span><span class="issue-tag">integration</span></div>
 </div>
 <div class="issue-item sev-friction">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/2026-03-30-0232-warning-omni-graph-core-plugin-could-not-find-node-type-interface-for-omni-graph-nodes-readprimlocaltransform/365051" target="_blank">OmniGraph ReadPrimLocalTransform node type not found</a></div>
-<div class="issue-desc">Warning when adding ReadPrimLocalTransform node in OmniGraph. Node type interface not found.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 30</span><span class="issue-tag">omnigraph</span><span class="issue-tag">node-type</span><span class="issue-tag">missing</span></div>
-</div>
-<div class="issue-item sev-friction">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/viewport-flickering-issue-in-isaac-sim-after-recent-use/365140" target="_blank">[PRE-5.1] Viewport flickering in Isaac Sim 4.5 (Windows)</a></div>
 <div class="issue-desc">Viewport flickering started March 23. Windows, Isaac Sim 4.5.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-friction">friction</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 31</span><span class="issue-tag">viewport</span><span class="issue-tag">flickering</span><span class="issue-tag">windows</span><span class="issue-tag">pre-5.1</span></div>
-</div>
-<div class="issue-item sev-wishlist">
-<div class="issue-title"><a href="https://forums.developer.nvidia.com/t/is-there-a-built-in-inner-loop-pid-velocity-controller-for-multirotor-quadrotor-in-isaac-lab/365068" target="_blank">Request: built-in PID velocity controller for multirotor in Isaac Lab</a></div>
-<div class="issue-desc">Request for inner-loop PID controller for Crazyflie CF2X quadrotor RL. No equivalent to gym-pybullet-drones DSLPIDControl.</div>
-<div class="issue-meta"><span class="issue-sev issue-sev-wishlist">wishlist</span><span class="issue-src">nvidia-forum</span><span class="issue-date">Mar 30</span><span class="issue-tag">multirotor</span><span class="issue-tag">pid</span><span class="issue-tag">controller</span><span class="issue-tag">quadrotor</span></div>
 </div>
 </div>
 
 <!-- 1m -->
 <div id="digest-1m" class="digest-window">
 <div class="window-stats">
-<div class="ws-item"><div class="ws-num">32</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">13</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">5</div><div class="ws-lbl">Wishlist</div></div>
+<div class="ws-item"><div class="ws-num">34</div><div class="ws-lbl">Issues</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Blockers</div></div><div class="ws-item"><div class="ws-num">15</div><div class="ws-lbl">Pain</div></div><div class="ws-item"><div class="ws-num">7</div><div class="ws-lbl">Friction</div></div><div class="ws-item"><div class="ws-num">5</div><div class="ws-lbl">Wishlist</div></div>
 </div>
-<div class="digest-summary"><p><strong>32 issues tracked (Mar 13 &#8211; Apr 12, 2026).</strong> Blockers: Physics Explosion with Custom Ackermann AMR on Mov, Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p.</p></div>
+<div class="digest-summary"><p><strong>34 issues tracked (Mar 14 &#8211; Apr 13, 2026).</strong> Blockers: Physics Explosion with Custom Ackermann AMR on Mov, Jetson AGX Thor WebRTC Livestream Not Working, Multi-GPU distributed training fails with Newton p.</p></div>
 
 <div class="issue-item sev-blocker">
 <div class="issue-title"><a href="https://forums.developer.nvidia.com/t/sample-ackermann-custom-car-physics-explosion-on-movement/364774" target="_blank">Physics Explosion with Custom Ackermann AMR on Movement</a></div>
@@ -448,7 +438,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 <div class="issue-desc">Calling move_prim() or MovePrims during extension startup causes segfault. MovePrimCommand re-fetches USD stage without null-checking. If stage isn&#x27;t ready, C++ bindings crash instead of raising Python exception. Fix: defer to StageEventType.ASSETS_LOADED. 3 comments, still OPEN.</div>
 <div class="issue-meta"><span class="issue-sev issue-sev-pain">pain</span><span class="issue-src">github</span><span class="issue-date">Mar 30</span><span class="issue-tag">extension</span><span class="issue-tag">move-prim</span><span class="issue-tag">segfault</span><span class="issue-tag">usd-stage</span></div>
 </div>
-<p style="text-align:center;padding:12px;color:#475569;font-size:.75rem;font-style:italic">+ 12 more issues not shown</p>
+<p style="text-align:center;padding:12px;color:#475569;font-size:.75rem;font-style:italic">+ 14 more issues not shown</p>
 </div>
 
 </section>
@@ -563,7 +553,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Weekly Stats Bar -->
 <section>
-<h2>&#x1f52c; Tech Radar &#8212; Week of Apr 4 &#8211; Apr 11, 2026</h2>
+<h2>&#x1f52c; Tech Radar &#8212; Week of Apr 6 &#8211; Apr 13, 2026</h2>
 <div class="radar-stats">
 <div class="radar-stat"><div class="rs-num">~250+</div><div class="rs-lbl">ArXiv cs.RO Papers</div></div>
 <div class="radar-stat"><div class="rs-num">4</div><div class="rs-lbl">Major Partnerships</div></div>
@@ -574,7 +564,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Key ArXiv Papers -->
 <section>
-<h2>&#x1f4c4; Key ArXiv Papers &#8212; Week of Apr 4 &#8211; Apr 11, 2026</h2>
+<h2>&#x1f4c4; Key ArXiv Papers &#8212; Week of Apr 6 &#8211; Apr 13, 2026</h2>
 <div class="paper-card">
 <h4><a href="https://arxiv.org/abs/2602.19359" target="_blank">Vid2Sid: VLM-in-the-Loop Sim2Real Parameter Optimization</a></h4>
 <div class="paper-summary">Foundation model perception + VLM optimizer analyzes paired sim-real videos, diagnoses mismatches, and proposes physics parameter updates with natural language rationales. Automates manual sim-to-real tuning.</div>
@@ -705,8 +695,18 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 <!-- Industry Moves -->
 <section>
-<h2>&#x1f3ed; Industry Moves &#8212; Apr 4 &#8211; Apr 11, 2026</h2>
+<h2>&#x1f3ed; Industry Moves &#8212; Apr 6 &#8211; Apr 13, 2026</h2>
 <div class="timeline">
+<div class="tl-item">
+<div class="tl-date">Apr 13</div>
+<div class="tl-title">KUKA &#8220;Automation 2.0&#8221; &#8212; Intent-Based Industrial AI</div>
+<div class="tl-desc">World&#8217;s #4 industrial robot maker shifts to intent-based systems: users define outcomes, robots determine execution. KUKA AMP platform unifies hardware + software + simulation. GTC 2026 partner.</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">Apr 13</div>
+<div class="tl-title">Locus Robotics: Fully Autonomous Warehouse Fulfillment</div>
+<div class="tl-desc">Locus Array combines mobile robotics + picking arm + AI perception for end-to-end fulfillment. Deploying now in North America. No manual intervention required.</div>
+</div>
 <div class="tl-item">
 <div class="tl-date">Apr 10</div>
 <div class="tl-title">SVT Robotics: Softbot Intelligence Data Platform</div>
@@ -917,7 +917,7 @@ footer{text-align:center;padding:24px 0;color:#475569;font-size:.75rem;border-to
 
 </div>
 
-<footer><p>Ziggy - PM Claw - Updated 2026-04-11 - Isaac Sim 5.1+ priority - Daily pull 7 AM PT</p></footer>
+<footer><p>Ziggy - PM Claw - Updated 2026-04-13 - Isaac Sim 5.1+ priority - Daily pull 7 AM PT</p></footer>
 </div>
 <script>
 function switchTab(name){
