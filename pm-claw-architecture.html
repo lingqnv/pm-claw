@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM Claw — System Architecture</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+<style>
+  :root {
+    --bg: #fafafa;
+    --card: #ffffff;
+    --border: #e0e0e0;
+    --accent: #2e7d32;
+    --accent-light: #e8f5e9;
+    --text: #212121;
+    --text-secondary: #616161;
+    --grey-accent: #78909c;
+    --grey-light: #eceff1;
+    --orange: #e65100;
+    --orange-light: #fff3e0;
+    --blue: #1565c0;
+    --blue-light: #e3f2fd;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 40px 0 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-green { background: var(--accent-light); color: var(--accent); }
+  .badge-grey { background: var(--grey-light); color: var(--grey-accent); }
+  .badge-orange { background: var(--orange-light); color: var(--orange); }
+  .badge-blue { background: var(--blue-light); color: var(--blue); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .card p { color: var(--text-secondary); margin-bottom: 12px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  .layer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .layer-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+  }
+  .layer-item h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .layer-item p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+  }
+  .layer-item .tech {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    color: var(--grey-accent);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  .mermaid-wrap {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    overflow-x: auto;
+  }
+
+  .autonomy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 0.92rem;
+  }
+  .autonomy-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--bg);
+    border-bottom: 2px solid var(--border);
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: var(--text-secondary);
+  }
+  .autonomy-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .auto-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .auto-full { background: var(--accent-light); color: var(--accent); }
+  .auto-review { background: var(--orange-light); color: var(--orange); }
+  .auto-approve { background: #fce4ec; color: #c62828; }
+
+  .phase-timeline {
+    margin-top: 16px;
+    position: relative;
+    padding-left: 24px;
+  }
+  .phase-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border);
+  }
+  .phase {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .phase::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid white;
+  }
+  .phase h4 { font-size: 0.95rem; font-weight: 600; }
+  .phase p { font-size: 0.88rem; color: var(--text-secondary); margin-top: 4px; }
+
+  .decision-box {
+    background: var(--orange-light);
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 20px;
+  }
+  .decision-box h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+  .decision-box p { font-size: 0.88rem; color: var(--text-secondary); }
+
+  @media (max-width: 700px) {
+    .layer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>PM Claw — System Architecture</h1>
+<p class="subtitle">An agent system to run operations of a mature product. Replaces manual PM signal-processing with an orchestrated multi-agent pipeline.</p>
+
+<!-- ============================================================ -->
+<h2>High-Level Architecture <span class="badge badge-green">Overview</span></h2>
+<div class="mermaid-wrap">
+<pre class="mermaid">
+graph TB
+    subgraph INPUT["① Data Ingestion Layer"]
+        direction LR
+        T[Telemetry<br/>Streams]
+        UF[User Feedback<br/>Internal + External]
+        BUG[NVBugs / Forums<br/>/ GitHub Issues]
+        MKT[Market Intel<br/>Competitor + Tech]
+        STRAT[Strategy<br/>Changes]
+        MEET[Meeting<br/>Transcripts]
+        DASH[Dashboards<br/>API Catalog / NGC]
+    end
+
+    subgraph ORCHESTRATOR["② PM Orchestrator Agent"]
+        direction TB
+        ROUTER[Signal Router<br/><i>classifies + prioritizes incoming signals</i>]
+        CONTEXT[Context Store<br/><i>persistent memory: features, customers, decisions</i>]
+        PLANNER[Task Planner<br/><i>decides what actions to take</i>]
+    end
+
+    subgraph AGENTS["③ Specialist Agents"]
+        direction LR
+        RA[Reporter<br/>Agent]
+        PA[Prioritization<br/>Agent]
+        DA[Doc Writer<br/>Agent]
+        SA[Sample Builder<br/>Agent]
+        PR[Prototyper<br/>Agent]
+        USA[User Story<br/>Agent]
+        OA[Outreach<br/>Agent]
+        EA[Eng Tracker<br/>Agent]
+    end
+
+    subgraph OUTPUT["④ Action & Delivery Layer"]
+        direction LR
+        REPORT[Reports &<br/>Dashboards]
+        JIRA[Feature Request<br/>Backlog]
+        DOCS[Documentation]
+        SAMPLES[Code Samples]
+        PROTO[Prototypes]
+        STORIES[User Stories]
+        NOTIFY[User Pings /<br/>Notifications]
+        GITLAB[GitLab<br/>Tracking]
+    end
+
+    INPUT --> ORCHESTRATOR
+    ORCHESTRATOR --> AGENTS
+    AGENTS --> OUTPUT
+
+    style INPUT fill:#eceff1,stroke:#90a4ae,color:#37474f
+    style ORCHESTRATOR fill:#e3f2fd,stroke:#64b5f6,color:#1565c0
+    style AGENTS fill:#e8f5e9,stroke:#66bb6a,color:#2e7d32
+    style OUTPUT fill:#fff3e0,stroke:#ffb74d,color:#e65100
+</pre>
+</div>
+
+<!-- ============================================================ -->
+<h2>Layer 1 — Data Ingestion <span class="badge badge-grey">Input</span></h2>
+<div class="card">
+  <p>This layer transforms the grey-box world (how PMs work today) into structured, queryable signals. Each connector normalizes raw data into a common event schema so the orchestrator doesn't care about the source.</p>
+  <div class="layer-grid">
+    <div class="layer-item">
+      <h4>Telemetry Connector</h4>
+      <p>Streams product usage metrics, detects anomalies and trend shifts. Emits <code>TELEMETRY_CHANGE</code> events when thresholds are breached.</p>
+      <div class="tech">Source: internal dashboards, API catalog, NGC metrics</div>
+    </div>
+    <div class="layer-item">
+      <h4>Feedback Connector</h4>
+      <p>Aggregates internal user feedback + external user feedback. NLP classification into themes, sentiment, and urgency.</p>
+      <div class="tech">Source: surveys, Slack channels, support tickets</div>
+    </div>
+    <div class="layer-item">
+      <h4>Issue Connector</h4>
+      <p>Monitors NVBugs, forum posts, GitHub issues. Deduplicates, links to existing features, and tags severity.</p>
+      <div class="tech">Source: NVBugs API, GitHub API, forum scrapers</div>
+    </div>
+    <div class="layer-item">
+      <h4>Market Intel Connector</h4>
+      <p>Tracks competitor moves, enabling technology changes, and relevant market shifts. Periodic enrichment from market databases and news.</p>
+      <div class="tech">Source: market database, news feeds, analyst reports</div>
+    </div>
+    <div class="layer-item">
+      <h4>Strategy Connector</h4>
+      <p>Ingests OV core strategy changes and leadership directives. Translates high-level strategy into constraints the prioritization agent can use.</p>
+      <div class="tech">Source: strategy docs, leadership comms</div>
+    </div>
+    <div class="layer-item">
+      <h4>Meeting Transcript Connector</h4>
+      <p>Processes product pound and customer meeting transcripts. Extracts action items, feature requests, and commitments.</p>
+      <div class="tech">Source: meeting recordings, transcript services</div>
+    </div>
+  </div>
+</div>
+
+<div class="decision-box">
+  <h4>Key Design Decision: Push vs. Pull</h4>
+  <p>Telemetry and issues should be <strong>event-driven</strong> (push via webhooks) — you want to react fast. Market intel and strategy changes are lower-frequency and work better as <strong>scheduled polls</strong> (daily/weekly). Meeting transcripts are <strong>triggered on upload</strong>. The common event schema should include: <code>source</code>, <code>timestamp</code>, <code>signal_type</code>, <code>urgency</code>, <code>raw_payload</code>, <code>extracted_entities</code>.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>Layer 2 — PM Orchestrator <span class="badge badge-blue">Brain</span></h2>
+<div class="card">
+  <p>The orchestrator is the "PM brain" — it replaces the human PM as the central routing hub. It doesn't do the work itself; it classifies signals, maintains context, and dispatches tasks to specialist agents.</p>
+  <div class="layer-grid">
+    <div class="layer-item">
+      <h4>Signal Router</h4>
+      <p>Classifies incoming events by type and urgency. Determines which specialist agent(s) should handle each signal. Can batch related signals together (e.g., 5 bug reports about the same feature → single prioritization task).</p>
+      <div class="tech">LLM classifier + rule-based urgency scoring</div>
+    </div>
+    <div class="layer-item">
+      <h4>Context Store</h4>
+      <p>Persistent memory that accumulates PM knowledge over time: feature history, customer relationships, past decisions and rationale, roadmap state. This is what makes the system smarter than a stateless pipeline.</p>
+      <div class="tech">Vector DB + structured knowledge graph (features ↔ customers ↔ priorities)</div>
+    </div>
+    <div class="layer-item">
+      <h4>Task Planner</h4>
+      <p>Given a classified signal + context, decides the action plan. May trigger multiple agents in sequence or parallel. Handles dependencies (e.g., "write user story" depends on "prioritize feature request").</p>
+      <div class="tech">LLM-based planner with DAG execution</div>
+    </div>
+    <div class="layer-item">
+      <h4>Human-in-the-Loop Gateway</h4>
+      <p>Controls which actions auto-execute vs. require PM review. Configurable per action type. Sends approval requests via Slack/email and waits for confirmation before proceeding.</p>
+      <div class="tech">Approval queue + notification integration</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Layer 3 — Specialist Agents <span class="badge badge-green">Workers</span></h2>
+<div class="card">
+  <p>Each green box from your diagram maps to a specialist agent with a focused capability. They receive structured tasks from the orchestrator and produce concrete outputs.</p>
+
+  <div class="layer-grid">
+    <div class="layer-item">
+      <h4>📊 Reporter Agent</h4>
+      <p>Generates telemetry change reports and integration status updates. Runs on schedule or triggered by anomalies. Outputs formatted reports (Slack, email, or dashboard).</p>
+    </div>
+    <div class="layer-item">
+      <h4>🎯 Prioritization Agent</h4>
+      <p>Takes feature requests, bug reports, and feedback signals. Scores them against strategy constraints, customer impact, and engineering effort. Outputs a ranked backlog.</p>
+    </div>
+    <div class="layer-item">
+      <h4>📝 Doc Writer Agent</h4>
+      <p>Writes and updates product documentation — API docs, integration guides, release notes. Can draft from scratch or update existing docs based on code changes.</p>
+    </div>
+    <div class="layer-item">
+      <h4>🔧 Sample Builder Agent</h4>
+      <p>Generates code samples and integration examples. Can create from API specs, adapt existing samples to new use cases, or build from customer requests.</p>
+    </div>
+    <div class="layer-item">
+      <h4>🧪 Prototyper Agent</h4>
+      <p>Builds quick prototypes and proof-of-concepts to validate feature ideas. Spins up minimal working demos that can be shared with stakeholders for feedback.</p>
+    </div>
+    <div class="layer-item">
+      <h4>📋 User Story Agent</h4>
+      <p>Converts prioritized features into well-structured user stories with acceptance criteria, ready for engineering sprint planning.</p>
+    </div>
+    <div class="layer-item">
+      <h4>📢 Outreach Agent</h4>
+      <p>Handles "actions to ping users" — sends targeted notifications to users about relevant feature updates, asks for feedback on specific topics, or follows up on reported issues.</p>
+    </div>
+    <div class="layer-item">
+      <h4>🔄 Eng Tracker Agent</h4>
+      <p>Monitors GitLab coding execution progress. Tracks commits, MR status, and pipeline results against the prioritized backlog. Flags slippage or blockers.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Autonomy Spectrum <span class="badge badge-orange">Governance</span></h2>
+<div class="card">
+  <p>Not every action should auto-execute. Here's a suggested classification for each agent's outputs:</p>
+  <table class="autonomy-table">
+    <thead>
+      <tr>
+        <th>Agent</th>
+        <th>Output</th>
+        <th>Autonomy</th>
+        <th>Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Reporter</td>
+        <td>Telemetry / status reports</td>
+        <td><span class="auto-tag auto-full">Auto</span></td>
+        <td>Low risk — informational only, no side effects</td>
+      </tr>
+      <tr>
+        <td>Eng Tracker</td>
+        <td>GitLab progress updates</td>
+        <td><span class="auto-tag auto-full">Auto</span></td>
+        <td>Read-only monitoring, flagging only</td>
+      </tr>
+      <tr>
+        <td>Prioritization</td>
+        <td>Ranked feature list</td>
+        <td><span class="auto-tag auto-review">PM Review</span></td>
+        <td>Strategy-sensitive — PM should validate ranking before it's shared</td>
+      </tr>
+      <tr>
+        <td>User Story</td>
+        <td>User stories for eng</td>
+        <td><span class="auto-tag auto-review">PM Review</span></td>
+        <td>Directly shapes eng work — needs accuracy check</td>
+      </tr>
+      <tr>
+        <td>Doc Writer</td>
+        <td>Documentation drafts</td>
+        <td><span class="auto-tag auto-review">PM Review</span></td>
+        <td>External-facing — needs quality / accuracy review</td>
+      </tr>
+      <tr>
+        <td>Sample Builder</td>
+        <td>Code samples</td>
+        <td><span class="auto-tag auto-review">PM Review</span></td>
+        <td>Needs testing / correctness validation</td>
+      </tr>
+      <tr>
+        <td>Prototyper</td>
+        <td>Working prototypes</td>
+        <td><span class="auto-tag auto-review">PM Review</span></td>
+        <td>Stakeholder-facing — PM decides when to share</td>
+      </tr>
+      <tr>
+        <td>Outreach</td>
+        <td>User notifications</td>
+        <td><span class="auto-tag auto-approve">PM Approval</span></td>
+        <td>Highest risk — directly contacts users, relationship-sensitive</td>
+      </tr>
+      <tr>
+        <td>Prioritization</td>
+        <td>Strategy / roadmap guidance</td>
+        <td><span class="auto-tag auto-approve">PM Approval</span></td>
+        <td>Shapes product direction — cannot be fully delegated</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<h2>Data Flow — End-to-End Example <span class="badge badge-blue">Walkthrough</span></h2>
+<div class="mermaid-wrap">
+<pre class="mermaid">
+sequenceDiagram
+    participant SRC as GitHub Issues
+    participant ING as Issue Connector
+    participant ORC as Orchestrator
+    participant CTX as Context Store
+    participant PRI as Prioritization Agent
+    participant US as User Story Agent
+    participant PM as Human PM
+    participant GL as GitLab
+
+    SRC->>ING: New issue filed (feature request)
+    ING->>ORC: FEATURE_REQUEST event
+    ORC->>CTX: Query: related features, past requests, affected customers
+    CTX-->>ORC: Context bundle
+    ORC->>PRI: "Score and rank this against current backlog"
+    PRI-->>ORC: Updated priority ranking
+    ORC->>PM: "Review: feature X moved to P1 based on 12 customer requests"
+    PM-->>ORC: Approved ✓
+    ORC->>US: "Write user stories for feature X"
+    US-->>ORC: 3 user stories with acceptance criteria
+    ORC->>PM: "Review stories before pushing to eng"
+    PM-->>ORC: Approved with edits ✓
+    ORC->>GL: Create issues in GitLab with stories
+</pre>
+</div>
+
+<!-- ============================================================ -->
+<h2>Suggested Build Phases <span class="badge badge-green">Rollout</span></h2>
+<div class="card">
+  <div class="phase-timeline">
+    <div class="phase">
+      <h4>Phase 1 — Read-Only Foundation (Weeks 1–4)</h4>
+      <p>Build the data ingestion layer + Context Store. Get the Reporter Agent and Eng Tracker Agent working. These are low-risk, high-visibility wins — the PM claw starts producing value by surfacing information the PM would otherwise have to dig for manually. No external side effects.</p>
+    </div>
+    <div class="phase">
+      <h4>Phase 2 — Prioritization Loop (Weeks 5–8)</h4>
+      <p>Add the Prioritization Agent with PM-in-the-loop review. Connect to the backlog. This is where the system starts making judgment calls, so tight human oversight is critical early on. Calibrate against the PM's actual decisions.</p>
+    </div>
+    <div class="phase">
+      <h4>Phase 3 — Content Generation (Weeks 9–14)</h4>
+      <p>Add Doc Writer, Sample Builder, User Story, and Prototyper agents. All in PM-review mode. These amplify PM output — the system drafts, the PM edits and approves. Measure time savings.</p>
+    </div>
+    <div class="phase">
+      <h4>Phase 4 — Outreach & Closed Loop (Weeks 15–20)</h4>
+      <p>Add the Outreach Agent (PM-approval mode). Close the loop: the system can now ingest a signal, prioritize it, generate the artifacts, track execution, and notify users — with human checkpoints at key decision points.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<h2>Open Questions to Resolve <span class="badge badge-orange">Discussion</span></h2>
+<div class="card">
+  <div class="layer-grid">
+    <div class="layer-item">
+      <h4>1. Single product or multi-product?</h4>
+      <p>Does this PM claw manage one product, or should it be designed to handle multiple products from the start? This affects the Context Store schema significantly.</p>
+    </div>
+    <div class="layer-item">
+      <h4>2. Where does the "Top 5" list come from?</h4>
+      <p>Your data sources mention "Top 5" — is this a manually curated priority list? If so, does the Prioritization Agent replace it, or feed into it?</p>
+    </div>
+    <div class="layer-item">
+      <h4>3. Eng interface: push or pull?</h4>
+      <p>Does the PM claw push user stories directly into GitLab, or does eng pull from a shared backlog? Push is faster but requires more trust in the system's output quality.</p>
+    </div>
+    <div class="layer-item">
+      <h4>4. How do you bootstrap the Context Store?</h4>
+      <p>The system gets smarter with accumulated context. Do you seed it with historical data (past roadmaps, feature decisions, customer records), or start cold and let it learn?</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    sequence: { useMaxWidth: true, actorMargin: 50 }
+  });
+</script>
+</body>
+</html>
